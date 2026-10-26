@@ -4,6 +4,10 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 android {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
     namespace = "com.example.aivideogenerator"
     compileSdk = 35
     defaultConfig {
@@ -15,6 +19,10 @@ android {
     }
     buildFeatures { compose = true }
 }
+kotlinOptions {
+    jvmTarget = "17"
+}
+
 dependencies {
     implementation(platform("androidx.compose:compose-bom:2024.12.01"))
     implementation("androidx.activity:activity-compose:1.10.0")
